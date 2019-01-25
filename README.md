@@ -20,60 +20,60 @@ public class Runner {
 
 	public static void oyun() {
 
-		giriş = girilen();
-		if (giriş.equals("q")) {
-			System.exit(0);
-		} else {
+	giriş = girilen();
+	if (giriş.equals("q")) {
+	System.exit(0);
+	} else {
 
-			try {
+	try {
 
-				int tasindex = dama.indexOf(giriş.split("-")[0]);
-				int hamleindex = Integer.parseInt(giriş.split("-")[1]);
+	int tasindex = dama.indexOf(giriş.split("-")[0]);
+	int hamleindex = Integer.parseInt(giriş.split("-")[1]);
 
-				if (tasindex > 7 && hamleindex == tasindex - 8 && dama.get(hamleindex).equals("*")) {
-					dama.set(hamleindex, hamleindex + "");
-					dama.set(tasindex, "*");
-					yenile();
-				} else if (tasindex % 8 != 0 && hamleindex == tasindex - 1 && dama.get(hamleindex).equals("*")) {
-					dama.set(hamleindex, hamleindex + "");
-					dama.set(tasindex, "*");
-					yenile();
-				} else if (tasindex % 8 != 7 && hamleindex == tasindex + 1 && dama.get(hamleindex).equals("*")) {
-					dama.set(hamleindex, hamleindex + "");
-					dama.set(tasindex, "*");
-					yenile();
-				} else {
-					while (true) {
+	if (tasindex > 7 && hamleindex == tasindex - 8 && dama.get(hamleindex).equals("*")) {
+	dama.set(hamleindex, hamleindex + "");
+	dama.set(tasindex, "*");
+	yenile();
+	} else if (tasindex % 8 != 0 && hamleindex == tasindex - 1 && dama.get(hamleindex).equals("*")) {
+				dama.set(hamleindex, hamleindex + "");
+				dama.set(tasindex, "*");
+				yenile();
+	} else if (tasindex % 8 != 7 && hamleindex == tasindex + 1 && dama.get(hamleindex).equals("*")) {
+				dama.set(hamleindex, hamleindex + "");
+				dama.set(tasindex, "*");
+				yenile();
+	} else {
+	while (true) {
 
-						hamleindex = Integer.parseInt(giriş.split("-")[1]);
+	hamleindex = Integer.parseInt(giriş.split("-")[1]);
 
-						if (tasindex > 15 && hamleindex == tasindex - 16 && dama.get(hamleindex).equals("*")
-								&& dama.get(tasindex - 8).equals("X")) {
-							dama.set(hamleindex, hamleindex + "");
-							dama.set(tasindex - 8, "*");
-							dama.set(tasindex, "*");
-							tasindex = hamleindex;
-							yenile();
-							girilen();
-						} else if (tasindex % 8 != 1 && hamleindex == tasindex - 2 && dama.get(hamleindex).equals("*")
-								&& dama.get(tasindex - 1).equals("X")) {
-							dama.set(hamleindex, hamleindex + "");
-							dama.set(tasindex - 1, "*");
-							dama.set(tasindex, "*");
-							tasindex = hamleindex;
-							yenile();
-							girilen();
-						} else if (tasindex % 8 != 6 && hamleindex == tasindex + 2 && dama.get(hamleindex).equals("*")
-								&& dama.get(tasindex + 1).equals("X")) {
-							dama.set(hamleindex, hamleindex + "");
-							dama.set(tasindex + 1, "*");
-							dama.set(tasindex, "*");
-							tasindex = hamleindex;
-							yenile();
-							girilen();
-						} else {
-							System.out.println("hatalı giriş,pc oynadı");
-							oyunpc();
+	if (tasindex > 15 && hamleindex == tasindex - 16 && dama.get(hamleindex).equals("*")
+				&& dama.get(tasindex - 8).equals("X")) {
+				dama.set(hamleindex, hamleindex + "");
+				dama.set(tasindex - 8, "*");
+				dama.set(tasindex, "*");
+				tasindex = hamleindex;
+				yenile();
+				girilen();
+	} else if (tasindex % 8 != 1 && hamleindex == tasindex - 2 && dama.get(hamleindex).equals("*")
+				&& dama.get(tasindex - 1).equals("X")) {
+				dama.set(hamleindex, hamleindex + "");
+				dama.set(tasindex - 1, "*");
+				dama.set(tasindex, "*");
+				tasindex = hamleindex;
+				yenile();
+				girilen();
+	} else if (tasindex % 8 != 6 && hamleindex == tasindex + 2 && dama.get(hamleindex).equals("*")
+				&& dama.get(tasindex + 1).equals("X")) {
+				dama.set(hamleindex, hamleindex + "");
+				dama.set(tasindex + 1, "*");
+				dama.set(tasindex, "*");
+				tasindex = hamleindex;
+				yenile();
+				girilen();
+	} else {
+					System.out.println("hatalı giriş,pc oynadı");
+					oyunpc();
 						}
 					}
 				}
@@ -129,28 +129,28 @@ public class Runner {
 
 			if (tasindex2 == tasindex) {
 				while (true) {
-					if (tasindex < 56 && dama.get(tasindex + 8).equals("*")) {
-						dama.set(tasindex + 8, "X");
-						dama.set(tasindex, "*");
-						tasindex = tasindex + 8;
-						yenile();
-						break;
-					} else if (tasindex % 8 != 0 && dama.get(tasindex - 1).equals("*")) {
-						dama.set(tasindex - 1, "X");
-						dama.set(tasindex, "*");
-						tasindex = tasindex - 1;
-						yenile();
-						break;
-					} else if (tasindex % 8 != 7 && dama.get(tasindex + 1).equals("*")) {
-						dama.set(tasindex + 1, "X");
-						dama.set(tasindex, "*");
-						tasindex = tasindex + 1;
-						yenile();
-						break;
-					} else {
-						if (tasindex2 == tasindex && listx.size() != taslar.size()) {
-							do {
-								tasindex = randomx(listx);
+				if (tasindex < 56 && dama.get(tasindex + 8).equals("*")) {
+					dama.set(tasindex + 8, "X");
+					dama.set(tasindex, "*");
+					tasindex = tasindex + 8;
+					yenile();
+					break;
+				} else if (tasindex % 8 != 0 && dama.get(tasindex - 1).equals("*")) {
+					dama.set(tasindex - 1, "X");
+					dama.set(tasindex, "*");
+					tasindex = tasindex - 1;
+					yenile();
+					break;
+				} else if (tasindex % 8 != 7 && dama.get(tasindex + 1).equals("*")) {
+					dama.set(tasindex + 1, "X");
+					dama.set(tasindex, "*");
+					tasindex = tasindex + 1;
+					yenile();
+					break;
+				} else {
+					if (tasindex2 == tasindex && listx.size() != taslar.size()) {
+						do {
+							tasindex = randomx(listx);
 							} while (taslar.contains(tasindex));
 							taslar.add(tasindex);
 							tasindex2 = tasindex;
